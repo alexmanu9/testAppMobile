@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="*{titulo}"></title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Opciones a realizar:</h1>
+        <h2>1. Visitar <a th:href="@{/admin}">Pagina deAdmin (Protegido por Spring Security, Rol necesario:Admin)</a></h2>
+        <h2>2. Visitar <a th:href="@{/user}">Pagina de Usuario (Protegido por Spring Security, Rol necesario:Usuario)</a></h2>
+        <h2>3. Visitar <a th:href="@{/about}">Pagina Normal</a></h2>
+    </div>
+
+</div>
+<!-- /.container -->
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="*{titulo}"></title>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container">
+
+    <div class="starter-template">
+
+        <h1 th:inline="text">Bienvenido [[${#httpServletRequest.remoteUser}]]!</h1>
+
+	<form action="#" th:action="@{/guardarEmpleado}" th:object="${empleado}" method="post">
+    <table border="1">
+        <tr>
+            <td>Nombre: </td>
+            <td><input type="number" th:field="*{nombre}" /></td>
+        </tr>
+        <tr>
+            <td>Apellido Paterno: </td>
+            <td><input type="text" th:field="*{aPaterno}" /></td>
+        </tr>
+                <tr>
+            <td>Apellido Materno: </td>
+            <td><input type="text" th:field="*{aMaterno}" /></td>
+        </tr>
+                <tr>
+            <td>Edad: </td>
+            <td><input type="text" th:field="*{edad}" /></td>
+        </tr>
+          <tr>
+            <td>Email: </td>
+            <td><input type="text" th:field="*{email}" /></td>
+        </tr>
+          <tr>
+            <td>Telefono: </td>
+            <td><input type="text" th:field="*{telefono}" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+</form>
+
+    </div>
+
+</div>
+<!-- /.container -->
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
